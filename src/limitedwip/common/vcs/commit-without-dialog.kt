@@ -40,7 +40,7 @@ fun doCommitWithoutDialog(project: Project, isAmendCommit: Boolean = false, onSu
 
     val commitMessage = when (LimitedWipSettings.getInstance(project).commitMessageSource) {
         LastCommit     -> VcsConfiguration.getInstance(project).LAST_COMMIT_MESSAGE ?: ""
-        ChangeListName -> defaultChangeList.name
+        ChangeListName -> "@wip"
     }
 
     // Need this starting from around IJ 2019.2 because otherwise changes are not included into commit.
